@@ -172,7 +172,7 @@ void Client::RunTCP( void ) {
         }
 	totLen += currLen;
         pfd[0].fd = zm.zm_txfd;
-        pfd[0].events = POLLOUT;
+        pfd[0].events = POLLIN;
         int ret = poll(pfd, 1, -1);
         if (ret < 0) {
             perror("poll");
